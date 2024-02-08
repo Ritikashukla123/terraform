@@ -4,7 +4,7 @@ blocks:
   - name: Terraform Workflow
     task:
       env_vars:
-        TF_IN_AUTOMATION: "true"  # Set environment variable to prevent prompts
+        TF_IN_AUTOMATION: "true"  
       jobs:
         - name: Terraform Workflow
           commands:
