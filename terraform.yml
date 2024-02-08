@@ -1,19 +1,7 @@
-version: v1.0
-
-blocks:
-  - name: Terraform Workflow
-    task:
-      env_vars:
-        TF_IN_AUTOMATION: "true"  
-      jobs:
-        - name: Terraform Init
-          commands:
-            - terraform init
-        - name: Terraform Plan
-          commands:
-            - terraform plan
-        - name: Terraform Apply
-          commands:
-            - terraform apply -auto-approve
-
+---
+- hosts: localhost
+  tasks:
+    - name: Print Hello World
+      debug:
+        msg: "Hello, World!"
 
