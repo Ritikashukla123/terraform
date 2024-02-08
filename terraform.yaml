@@ -1,3 +1,6 @@
+version: v1.0
+name: Terraform Deployment
+
 agent:
   machine:
     type: e1-standard-2
@@ -9,9 +12,6 @@ blocks:
         - name: Terraform Init
           commands:
             - terraform init
-        - name: Terraform Plan
-          commands:
-            - terraform plan
         - name: Terraform Apply
           commands:
             - terraform apply -auto-approve
