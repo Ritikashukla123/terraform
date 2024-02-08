@@ -6,13 +6,22 @@ blocks:
       env_vars:
         TF_IN_AUTOMATION: "true"  # Set environment variable to prevent prompts
       jobs:
-        - name: Terraform Init
+        - name: Terraform Workflow
           commands:
-            - terraform init
-        - name: Terraform Plan
-          commands:
-            - terraform plan
-        - name: Terraform Apply
-          commands:
-            - terraform apply -auto-approve
+            - |
+              ansible-playbook -c local -i localhost, -e "ansible_python_interpreter=/usr/bin/python3" - << EOF
+              ---
+              - hosts: localhost
+                connection: local
+                tasks:
+                  - name: Terraform Workflow
+                    block:
+                      - name: Terraform Init
+                        command: terraform init
+                      - name: Terraform Plan
+                        command: terraform plan
+                      - name: Terraform Apply
+                        command: terraform apply -auto-approve
+              EOF
+
 
