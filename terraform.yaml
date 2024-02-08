@@ -1,0 +1,18 @@
+agent:
+  machine:
+    type: e1-standard-2
+
+blocks:
+  - name: Deploy Infrastructure
+    task:
+      jobs:
+        - name: Terraform Init
+          commands:
+            - terraform init
+        - name: Terraform Plan
+          commands:
+            - terraform plan
+        - name: Terraform Apply
+          commands:
+            - terraform apply -auto-approve
+
