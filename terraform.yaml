@@ -1,9 +1,6 @@
 ---
-- name: My Ansible Playbook
-  hosts: localhost
+- hosts: localhost
   tasks:
-    - name: Task 1
-      # Task 1 details go here
-
-    - name: Task 2
-      # Task 2 details go here
+    - name: Print Hello World
+      debug:
+        msg: "Hello, World!"
