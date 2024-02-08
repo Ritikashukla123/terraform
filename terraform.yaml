@@ -1,17 +1,17 @@
 version: v1.0
-name: Terraform Deployment
-
-agent:
-  machine:
-    type: e1-standard-2
 
 blocks:
-  - name: Deploy Infrastructure
+  - name: Terraform Workflow
     task:
+      env_vars:
+        TF_IN_AUTOMATION: "true"  # Set environment variable to prevent prompts
       jobs:
         - name: Terraform Init
           commands:
             - terraform init
+        - name: Terraform Plan
+          commands:
+            - terraform plan
         - name: Terraform Apply
           commands:
             - terraform apply -auto-approve
