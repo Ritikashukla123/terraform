@@ -3,12 +3,7 @@
 
 
   tasks:
-    - name: Ensure python3-apt is installed
-      package:
-        name: py3-apt
-        state: present
-      tags:
-        - prerequisites
+    
 
     - name: Install Nginx
       package:
