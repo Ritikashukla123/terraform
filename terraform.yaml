@@ -1,24 +1,24 @@
 - name: Nginx Management Playbook
   hosts: localhost
-  
+
 
   tasks:
     - name: Ensure python3-apt is installed
       package:
-        name: python3-apt
+        name: py3-apt
         state: present
       tags:
         - prerequisites
 
     - name: Install Nginx
-      apt:
+      package:
         name: nginx
         state: present
       tags:
         - install
 
     - name: Update Nginx
-      apt:
+      package:
         name: nginx
         state: latest
       tags:
@@ -31,4 +31,3 @@
       changed_when: restart_nginx_result is failed
       tags:
         - emergency
-
