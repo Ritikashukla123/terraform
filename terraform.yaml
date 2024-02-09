@@ -1,6 +1,6 @@
 - name: Nginx Management Playbook
   hosts: localhost
-  become: yes
+  
 
   tasks:
     - name: Ensure python3-apt is installed
