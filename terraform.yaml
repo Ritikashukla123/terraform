@@ -5,7 +5,9 @@
   tasks:
     - name: Install Nginx
       apt:
-        name: nginx
+        name: 
+        - python3
+        - nginx
         state: present
       tags:
         - install
