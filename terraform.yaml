@@ -1,7 +1,6 @@
 ---
 - name: Nginx Management Playbook
   hosts: localhost
-  become: true
   
   tasks:
     - name: Install Nginx
