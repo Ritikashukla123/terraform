@@ -1,6 +1,6 @@
 ---
 - name: Nginx Management Playbook
-  hosts: localhost
+  hosts: ec2
   
   tasks:
     - name: Install Nginx
