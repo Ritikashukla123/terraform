@@ -4,7 +4,7 @@
   tasks:
     - name: Install Nginx
       apt:
-        name: nginx
+        name: nginx-extras
         state: present
       tags:
         - install
