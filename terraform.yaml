@@ -1,13 +1,10 @@
 ---
 - name: Nginx Management Playbook
   hosts: localhost
-  
   tasks:
     - name: Install Nginx
       apt:
-        name: 
-        - python3-apt
-        - nginx
+        name: nginx
         state: present
       tags:
         - install
