@@ -3,11 +3,11 @@
   hosts: localhost
   tasks:
     - name: Install python3-apt package
-      command: apt-get install -y python3-apt
+      command: yum install -y python3-apt
       ignore_errors: yes
       
     - name: Install Nginx
-      apt:
+      yum:
         upgrade: yes
         update_cache: yes
     
