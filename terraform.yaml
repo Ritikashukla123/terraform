@@ -1,27 +1,11 @@
 ---
-- name: Nginx Management Playbook
-  hosts: localhost
+- name: Playbook
+  hosts: all
   tasks:
     - name: Install Nginx
       apt:
-        name: nginx-extras
-        state: present
-      tags:
-        - install
-
-    - name: Update Ngin
-      apt:
-        name: nginx
-        state: latest
-      tags:
-        - update
-
-    - name: Handle emergency situation for Nginx
-      shell: systemctl restart nginx
-      ignore_errors: yes
-      register: restart_nginx_result
-      changed_when: restart_nginx_result is failed
-      tags:
-        - emergency
+        upgrade: yes
+        update_cache: yes
+    
 
 
