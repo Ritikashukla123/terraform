@@ -3,11 +3,11 @@
   hosts: localhost
   tasks:
     - name: Install python3-apt package
-      yum:
+      apk:
         name: python3-apt
         state: present
     - name: Install Nginx
-      yum:
+      apk:
         upgrade: yes
         update_cache: yes
     
