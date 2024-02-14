@@ -1,6 +1,6 @@
 ---
 - name: Playbook
-  hosts: localhost
+  hosts: webservers
   tasks:
     - name: Install Nginx
       apt:
