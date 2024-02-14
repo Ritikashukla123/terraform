@@ -1,16 +1,25 @@
 ---
-- name: Playbook
+- name: Nginx Management Playbook
   hosts: localhost
-  become: yes
   tasks:
-    - name: Install python3-apt package
-      apk:
-        name: python3-apt
-        state: present
     - name: Install Nginx
-      apk:
-        upgrade: yes
-        update_cache: yes
-    
+      apt:
+        name: nginx
+        state: present
+      tags:
+        - install
 
+    - name: Update Ngin
+      apt:
+        name: nginx
+        state: latest
+      tags:
+        - update
 
+    - name: Handle emergency situation for Nginx
+      shell: systemctl restart nginx
+      ignore_errors: yes
+      register: restart_nginx_result
+      changed_when: restart_nginx_result is failed
+      tags:
+        - emergency
