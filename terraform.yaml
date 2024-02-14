@@ -1,6 +1,6 @@
 ---
 - name: Nginx Management Playbook
-  hosts: docker_host
+  hosts: localhost
   tasks:
     - name: Install Nginx
       become: true
