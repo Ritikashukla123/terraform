@@ -1,7 +1,8 @@
 ---
 - name: Nginx Management Playbook
-  hosts: localhost
+  hosts: laptop
   tasks:
+    -
     - name: Install Nginx
       become_user: root
       become_method: sudo
